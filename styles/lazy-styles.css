@@ -48,3 +48,8 @@ main > .section:last-child,
 main > div:last-child {
   margin-bottom: 0;
 }
+
+/* Hide trailing empty section from a document-level section break with no content */
+main > .section:last-child:not([class*="-container"]) {
+  display: none;
+}
