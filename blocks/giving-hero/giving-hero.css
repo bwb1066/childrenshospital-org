@@ -1,0 +1,107 @@
+main > .giving-hero-container {
+  margin: 0;
+  padding: 64px 0;
+  background-color: var(--light-color);
+}
+
+.giving-hero-container .giving-hero-wrapper {
+  max-width: unset;
+  padding: 0 17%;
+}
+
+.giving-hero-heading {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.2;
+  margin: 0 0 32px;
+}
+
+.giving-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.giving-hero-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.giving-hero-card-image picture {
+  display: block;
+}
+
+.giving-hero-card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.giving-hero-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 36px 32px 32px;
+  text-align: center;
+}
+
+.giving-hero-card .giving-hero-card-headline {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--bch-primary);
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.giving-hero-card-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #505050;
+  margin: 0 0 32px;
+  flex: 1;
+}
+
+.giving-hero-card-body .giving-hero-card-cta {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--bch-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.giving-hero-card-body .giving-hero-card-cta:hover {
+  background: var(--bch-secondary);
+  text-decoration: none;
+  color: white;
+}
+
+@media (width >= 600px) {
+  .giving-hero-grid {
+    grid-template-columns: repeat(3, 365px);
+    justify-content: center;
+  }
+
+  .giving-hero-card {
+    height: 656px;
+  }
+
+  .giving-hero-card-image img {
+    height: 220px;
+  }
+
+  .giving-hero-card-body {
+    padding: 32px 28px 28px;
+  }
+}

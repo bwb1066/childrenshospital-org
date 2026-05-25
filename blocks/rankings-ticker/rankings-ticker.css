@@ -1,0 +1,110 @@
+main > .rankings-ticker-container {
+  margin: 0;
+  padding: 40px 0 32px;
+  background: white;
+}
+
+.rankings-ticker-container .rankings-ticker-wrapper {
+  max-width: unset;
+  padding: 0 17%;
+}
+
+.rankings-ticker-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rankings-ticker-track-outer {
+  flex: 1;
+  overflow: hidden;
+}
+
+.rankings-ticker-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.rankings-ticker-slide {
+  flex: 0 0 calc(100% / var(--visible, 1));
+  padding: 0 24px;
+  text-align: center;
+  border-right: 1px solid #e0e6f0;
+}
+
+.rankings-ticker-slide:last-child {
+  border-right: none;
+}
+
+.rankings-ticker-text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--bch-navy);
+  line-height: 1.4;
+}
+
+/* Alternating strong colors */
+.rankings-ticker-slide:nth-child(odd) .rankings-ticker-text strong {
+  font-weight: 700;
+  color: var(--bch-primary);
+}
+
+.rankings-ticker-slide:nth-child(even) .rankings-ticker-text strong {
+  font-weight: 700;
+  color: var(--bch-pink);
+}
+
+.rankings-ticker-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--bch-primary);
+  display: flex;
+  align-items: center;
+}
+
+.rankings-ticker-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.rankings-ticker-btn:not(:disabled):hover {
+  color: var(--bch-secondary);
+}
+
+.rankings-ticker-cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.rankings-ticker-cta-link {
+  color: var(--bch-primary);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.rankings-ticker-cta-link::after {
+  content: ' ⊙';
+  font-weight: 400;
+}
+
+.rankings-ticker-cta-link:hover {
+  text-decoration: underline;
+  color: var(--bch-secondary);
+}
+
+@media (width >= 900px) {
+  .rankings-ticker-slide {
+    padding: 0 32px;
+  }
+
+  .rankings-ticker-text {
+    font-size: 14px;
+  }
+}

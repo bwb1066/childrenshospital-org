@@ -1,0 +1,99 @@
+main > .programs-hero-container {
+  margin: 0;
+  padding: 64px 0;
+  background-color: white;
+}
+
+.programs-hero-container .programs-hero-wrapper {
+  max-width: unset;
+  padding: 0 17%;
+}
+
+.programs-hero {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.programs-hero-content {
+  flex: 1;
+}
+
+.programs-hero-image {
+  flex: 0 0 44%;
+}
+
+.programs-hero-image picture {
+  display: block;
+}
+
+.programs-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+.programs-hero-headline {
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.programs-hero-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--dark-color);
+  margin: 0 0 24px;
+}
+
+.programs-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--bch-primary);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.programs-hero-cta::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--bch-primary);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23003087' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.programs-hero-cta:hover {
+  color: var(--bch-secondary);
+  text-decoration: none;
+}
+
+.programs-hero-cta:hover::after {
+  border-color: var(--bch-secondary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23027dba' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+}
+
+@media (width < 900px) {
+  .programs-hero {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .programs-hero-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .programs-hero-container .programs-hero-wrapper {
+    padding: 0 24px;
+  }
+}

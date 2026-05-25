@@ -1,0 +1,120 @@
+main > .primary-hero-container {
+  margin: 0;
+}
+
+body.has-primary-hero header {
+  height: 0;
+}
+
+.primary-hero-container .primary-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.primary-hero {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.primary-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.primary-hero-bg picture {
+  display: block;
+  height: 100%;
+}
+
+.primary-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center -160px;
+}
+
+.primary-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(0 0 0 / 78%) 0%, rgb(0 0 0 / 45%) 55%, rgb(0 0 0 / 0%) 100%);
+}
+
+.primary-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 24px 60px;
+  max-width: 540px;
+}
+
+.primary-hero-content .primary-hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 16px;
+  text-shadow: 0 0 8px rgb(0 0 0 / 80%);
+}
+
+.primary-hero-badges {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.primary-hero-badges picture {
+  display: block;
+}
+
+.primary-hero-badges img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.primary-hero-content .primary-hero-headline {
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.167;
+  color: white;
+  margin: 0 0 32px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgb(0 0 0 / 80%);
+}
+
+.primary-hero-content .primary-hero-cta:any-link {
+  display: inline-block;
+  background-color: var(--bch-pink);
+  color: white;
+  border-radius: 5px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-hero-content .primary-hero-cta:any-link:hover {
+  background-color: var(--bch-pink-hover);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .primary-hero {
+    min-height: 640px;
+  }
+
+  .primary-hero-content {
+    padding: calc(var(--util-nav-height) + var(--nav-height) + 40px) 48px 80px 17%;
+    max-width: 860px;
+    box-sizing: border-box;
+  }
+
+  .primary-hero-badges img {
+    height: 100px;
+  }
+}

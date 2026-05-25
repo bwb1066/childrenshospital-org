@@ -43,10 +43,37 @@ async function loadFonts() {
   }
 }
 
-/**
- * Builds all synthetic blocks in a container element.
- * @param {Element} main The container element
- */
+function buildNewsletterBlock(main) {
+  const emailBlock = main.querySelector('.email-address');
+  if (!emailBlock) return;
+
+  const section = emailBlock.parentElement;
+  const h2 = section.querySelector('h2');
+  const allPs = [...section.querySelectorAll('p')];
+  const bodyP = allPs.find((p) => p.textContent.trim() && p.textContent.trim().toLowerCase() !== 'submit');
+  const submitText = allPs.find((p) => p.textContent.trim().toLowerCase() === 'submit')?.textContent.trim() ?? 'Submit';
+
+  const fieldMap = [
+    ['.email-address', 'Email Address *'],
+    ['.first-name', 'First Name'],
+    ['.last-name', 'Last Name'],
+    ['.state', 'State'],
+    ['.country', 'Country'],
+  ];
+  const fields = fieldMap
+    .filter(([cls]) => section.querySelector(cls))
+    .map(([, label]) => [label]);
+
+  const block = buildBlock('newsletter-signup', [
+    [h2 ?? document.createElement('span'), bodyP ?? document.createElement('span')],
+    ...fields,
+    [submitText],
+  ]);
+
+  section.innerHTML = '';
+  section.append(block);
+}
+
 function buildAutoBlocks(main) {
   try {
     // auto load `*/fragments/*` references
@@ -68,6 +95,7 @@ function buildAutoBlocks(main) {
     }
 
     buildHeroBlock(main);
+    buildNewsletterBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -86,6 +114,9 @@ function decorateButtons(main) {
 
     // quick structural checks
     if (a.querySelector('img') || p.textContent.trim() !== text) return;
+
+    // skip tel: and mailto: links
+    if (/^(tel:|mailto:)/i.test(a.href)) return;
 
     // skip URL display links
     try {
