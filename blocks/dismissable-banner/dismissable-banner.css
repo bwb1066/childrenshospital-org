@@ -1,0 +1,74 @@
+.dismissable-banner {
+  background-color: var(--banner-bg, #c00);
+  width: 100%;
+  margin: 0;
+}
+
+.dismissable-banner.dark-text .dismissable-banner-inner {
+  color: #111;
+}
+
+.dismissable-banner.dark-text .dismissable-banner-close {
+  color: #111;
+}
+
+.dismissable-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 60px;
+  position: relative;
+  color: white;
+  min-height: 64px;
+  box-sizing: border-box;
+}
+
+.dismissable-banner-content {
+  text-align: center;
+}
+
+.dismissable-banner-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.dismissable-banner-content strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dismissable-banner-content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.dismissable-banner-content a:hover {
+  opacity: 0.85;
+}
+
+.dismissable-banner-close {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  opacity: 0.85;
+}
+
+.dismissable-banner-close:hover {
+  opacity: 1;
+}
+
+/* Section hosting the banner — strip default section margin */
+.section:has(.dismissable-banner) {
+  margin: 0 !important;
+}
