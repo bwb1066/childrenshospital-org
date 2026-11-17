@@ -101,3 +101,5 @@ async function loadBrandChat() {
 }
 
 loadBrandChat();
+
+import('./utils/beacon.js').then(({ default: beacon }) => beacon());
